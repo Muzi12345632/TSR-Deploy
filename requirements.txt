@@ -1,0 +1,8 @@
+numpy
+matplotlib
+pandas
+os
+random
+opencv
+tensorflow
+
