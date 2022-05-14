@@ -22,7 +22,7 @@ style.use('fivethirtyeight')
 
 
 #####------PARAMETERS------####
-path= ''
+path= 'Train'
 labelfile= ''
 batch_size_val = 50
 steps_per_epoch_val= 2000
