@@ -106,3 +106,16 @@ y_train= to_categorical(y_train,noOfclasses)
 y_test= to_categorical(y_test,noOfclasses)
 y_validation= to_categorical(y_validation,noOfclasses)
 
+##TODO import model file
+from module import myModel
+
+##Train model
+model= myModel()
+print(model.summary())
+history= model.fit_generator(dataGen.flow
+                             (X_train,y_train,batch_size=batch_size_val),
+                             steps_per_epoch=steps_per_epoch_val,
+                             epochs=epochs_val,
+                             validation_data=(X_validation,y_validation))
+
+##########
