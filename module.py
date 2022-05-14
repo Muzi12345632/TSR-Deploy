@@ -1,5 +1,14 @@
 from keras.models import Sequential
 from keras.layers.convolutional import Conv2D, MaxPooling2D
+from keras.layers import Dropout, Flatten, Dense
+from keras.optimizer_v1 import Adam
+import os
+
+
+path= 'Train'
+myList= os.listdir(path)
+noOfclasses= len(myList)
+imageDimensions= (32,32,3)
 
 ##build model
 
@@ -15,4 +24,15 @@ def myModel():
     model.add(MaxPooling2D(pool_size=size_of_pool))
 
     ##TODO add second part of model
-    
+    model.add((Conv2D(no_of_filters//2,size_of_filter2,activation='relu')))
+    model.add((Conv2D(no_of_filters // 2,size_of_filter2,activation='relu')))
+    model.add(MaxPooling2D(pool_size=size_of_pool))
+    model.add(Dropout(0.5))
+
+    model.add(Flatten())
+    model.add(Dense(no_of_nodes,activation='relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(noOfclasses,activation='softmax'))
+    ##Compile model
+    model.compile(Adam(lr=0.001),loss='catergorical crossentropy',metrics=['accuracy'])
+    return model
