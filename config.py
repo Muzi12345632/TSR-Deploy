@@ -66,18 +66,22 @@ print("Train",end='');print(X_train.shape,y_train.shape)
 print("Validation",end='');print(y_validation.shape,X_validation.shape)
 print("Test",end='');print(X_test.shape,y_test.shape)
 
+######Read CSV file
+data= pd.read_csv(labelfile)
+print("data shape", data.shape, type(data))
+
 
 ##########Data pre-processing
 
 def greyscale(img):
     img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     return img
-def equalise(img):
-    img= cv2.equalizeHist(img)
-    return img
+#def equalise(img):
+    #img= cv2.equalizeHist(img)
+    #return img
 def preprocessing(img):
     img= greyscale(img)
-    img= equalise(img)
+    #img= equalise(img)
     img= img/255
     return img
 
