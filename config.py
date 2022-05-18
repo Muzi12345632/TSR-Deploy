@@ -23,11 +23,11 @@ style.use('fivethirtyeight')
 
 #####------PARAMETERS------####
 path= 'Train'
-labelfile= ''
+labelfile= 'labels.csv'
 batch_size_val = 50
 steps_per_epoch_val= 2000
 epochs_val= 30
-imageDimensions= (32,32,3)
+imageDimensions= (32,32)
 testRatio = 0.2
 validationRatio= 0.2
 
@@ -45,6 +45,7 @@ for x in range(0, len(myList)):
     myPicList = os.listdir(path+"/"+str(count))
     for y in myPicList:
         curImg = cv2.imread(path+"/"+str(count)+"/"+y)
+        curImg= cv2.resize(curImg,imageDimensions)
         images.append(curImg)
         classNo.append(count)
     print(count, end=" ")
