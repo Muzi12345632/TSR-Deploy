@@ -99,7 +99,7 @@ X_test= X_test.reshape(X_test.shape[0],X_test.shape[1],X_test.shape[2],1)
 
 ###############Augmentation of images To  Makeit more Generic
 dataGen= ImageDataGenerator(width_shift_range= 0.1,
-                            height_shirt_range=0.1,
+                            height_shift_range=0.1,
                             zoom_range=0.2,
                             shear_range=0.1,
                             rotation_range=10)
@@ -121,6 +121,6 @@ history= model.fit_generator(dataGen.flow
                              (X_train,y_train,batch_size=batch_size_val),
                              steps_per_epoch=steps_per_epoch_val,
                              epochs=epochs_val,
-                             validation_data=(X_validation,y_validation))
+                             validation_data=(X_test,y_test))
 
 ##########
