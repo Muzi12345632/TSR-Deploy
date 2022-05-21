@@ -34,5 +34,5 @@ def myModel():
     model.add(Dropout(0.5))
     model.add(Dense(noOfclasses,activation='softmax'))
     ##Compile model
-    model.compile(Adam(lr=0.001),loss='catergorical crossentropy',metrics=['accuracy'])
+    model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
     return model
