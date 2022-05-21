@@ -25,7 +25,7 @@ style.use('fivethirtyeight')
 path= 'Train'
 labelfile= 'labels.csv'
 batch_size_val = 50
-steps_per_epoch_val= 200
+steps_per_epoch_val= 400
 epochs_val= 15
 imageDimensions= (32,32)
 testRatio = 0.2
@@ -99,7 +99,7 @@ X_test= X_test.reshape(X_test.shape[0],X_test.shape[1],X_test.shape[2],1)
 
 ###############Augmentation of images To  Makeit more Generic
 dataGen= ImageDataGenerator(width_shift_range= 0.1,
-                            height_shirt_range=0.1,
+                            height_shift_range=0.1,
                             zoom_range=0.2,
                             shear_range=0.1,
                             rotation_range=10)
