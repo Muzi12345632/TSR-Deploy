@@ -4,6 +4,11 @@ from keras.layers import Dropout, Flatten, Dense
 from keras.optimizer_v1 import Adam
 import os
 
+##TODO build and save module
+##TODO plot accuracy graphs
+##TODO test module on web cam
+##TODO start webplanning for technology
+
 
 path= 'Train'
 myList= os.listdir(path)
