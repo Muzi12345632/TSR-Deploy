@@ -25,8 +25,8 @@ style.use('fivethirtyeight')
 path= 'Train'
 labelfile= 'labels.csv'
 batch_size_val = 50
-steps_per_epoch_val= 2000
-epochs_val= 30
+steps_per_epoch_val= 200
+epochs_val= 15
 imageDimensions= (32,32)
 testRatio = 0.2
 validationRatio= 0.2
@@ -117,7 +117,7 @@ from module import myModel
 ##Train model
 model= myModel()
 print(model.summary())
-history= model.fit_generator(dataGen.flow
+history= model.fit(dataGen.flow
                              (X_train,y_train,batch_size=batch_size_val),
                              steps_per_epoch=steps_per_epoch_val,
                              epochs=epochs_val,
