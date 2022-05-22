@@ -24,7 +24,7 @@ style.use('fivethirtyeight')
 #####------PARAMETERS------####
 path= 'Train'
 labelfile= 'labels.csv'
-batch_size_val = 50
+batch_size_val = 60
 steps_per_epoch_val= 400
 epochs_val= 15
 imageDimensions= (32,32)
