@@ -27,8 +27,13 @@ def grayscale(img):
     img= cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     return img
 
+def equalise(img):
+    img= cv2.equalizeHist(img)
+    return img
+
 def preprocessing(img):
     img= grayscale(img)
+    img= equalise(img)
     img= img/255
     return img
 
@@ -52,7 +57,7 @@ def getClassname(classNo):
     elif classNo ==16: return 'Veh > 3.5 tons prohibited'
     elif classNo ==17: return 'No entry'
     elif classNo ==18: return 'General caution'
-    elif classNo ==19: return'Dangerous curve left'
+    elif classNo ==19: return 'Dangerous curve left'
     elif classNo ==20: return 'Dangerous curve right'
     elif classNo ==21: return 'Double curve'
     elif classNo ==22: return 'Bumpy road'
