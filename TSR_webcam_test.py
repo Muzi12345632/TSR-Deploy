@@ -85,5 +85,30 @@ def getClassname(classNo):
 while True:
 
     ##READ IMAGE
+    success, imgOriginal= cap.read()
 
-    
+    ##TODO draw bounding box around detected sign
+
+    ##Process  Image
+    img= np.asarray(imgOriginal)
+    img= cv2.resize(img,imageDimensions)
+    img= preprocessing(img)
+    img= img.reshape(1,32,32,1)
+    cv2.putText(imgOriginal,"CLASS: ",(20, 35), font, 0.75, (0,0,255),2,cv2.LINE_AA)
+    cv2.putText(imgOriginal,"PROBABILITY: ",(20, 75), font, 0.75, (255,0,0),2,cv2.LINE_AA)
+
+    ###PREDICT IMAGE
+    predictions= model.predict(img)
+    #classIndex=  model.predict_classes(img)
+    probabilityvalue= np.amax(predictions)
+    if probabilityvalue > threshold:
+        #cv2.putText(imgOriginal, str(classIndex)+" "+str(getClassname(classIndex)),(120, 35),font, 0.75,(0,0,255),2,cv2.LINE_AA)
+        cv2.putText(imgOriginal, str(round(probabilityvalue*100,2))+"%",(180, 75),font, 0.75,(255,0,0),2,cv2.LINE_AA)
+    cv2.imshow("Result", imgOriginal)
+
+    #plt.imshow(plot)
+
+    if cv2.waitKey(1) & 0xFF == ord("g"):
+        break
+
+
