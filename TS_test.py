@@ -4,14 +4,15 @@ import cv2
 from sklearn.metrics import  accuracy_score
 import matplotlib.pyplot as plt
 from keras.models import load_model
-import config
+#import config
 from PIL import Image
 
 ####TEST on Test data
 
 imageDimensions= (32,32)
-model= load_model('')
+model= load_model('TSR.h5')
 plt.figure(figsize = (25, 25))
+path= ('Test/00002.png')
 
 ##TODO create classes dictionary
 
@@ -65,8 +66,7 @@ def test_on_img(img):
     data= []
     image= Image.open(img)
     image= image.resize(imageDimensions)
-    image= np.array(data)
-    data.append(image)
+    data.append(np.array(image))
     X_test= np.array(data)
     Y_pred= model.predict_classes(X_test)
     return image, Y_pred
@@ -74,7 +74,7 @@ def test_on_img(img):
 
 ##TODO specify image to test on
 
-plot, prediction= test_on_img('Test/')
+plot, prediction= test_on_img(r'Test/00002.png')
 s= [str(i) for i in prediction]
 a= int("".join(s))
 print("Predicted Traffic Sign is:",classes[a])
