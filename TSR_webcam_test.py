@@ -1,10 +1,11 @@
+import matplotlib.pyplot as plt
 import numpy as np
 import cv2
-from keras.models import load_model
+from keras.models import load_model, Sequential
 
 ##########################
 
-
+imageDimensions= (32,32)
 frameWidth= 600
 frameHeight= 480
 brightness= 180
