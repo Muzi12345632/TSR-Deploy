@@ -6,6 +6,8 @@ from PIL import Image
 import cv2
 
 
+app= Flask(__name__)
+
 
 imageDimensions= (32,32)
 frameWidth= 600
@@ -23,11 +25,11 @@ cap.set(3, frameWidth)
 cap.set(4, frameHeight)
 cap.set(10, brightness)
 
-app= Flask(__name__)
-camera=cv2.VideoCapture(0)
+
+#camera=cv2.VideoCapture(vid)
 
 ###Import  model
-model= load_model('TSR.h5')
+#model= load_model('TSR.h5')
 
 
 def grayscale(img):
@@ -93,7 +95,11 @@ def getClassname(classNo):
 def generate_frames():
     while True:
         ##READ IMAGE
-        success, imgOriginal = camera.read()
+        success, imgOriginal = cap.read()
+
+        ###Import  model
+        model = load_model('model/TSR.h5')
+
         ##Process  Image
         img = np.asarray(imgOriginal)
         img = cv2.resize(img, imageDimensions)
