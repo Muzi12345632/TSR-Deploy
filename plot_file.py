@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from config import  history, model
+from keras.models import load_model
 
 ###PLot
 plt.figure(1)
