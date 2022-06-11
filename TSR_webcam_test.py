@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import cv2
 from keras.models import load_model, Sequential
@@ -13,6 +13,7 @@ threshold= 0.90
 font= cv2.FONT_HERSHEY_SIMPLEX
 
 #################################
+vid= 'testVideo.mp4'
 
 ###Setup video camera
 cap= cv2.VideoCapture(0)
@@ -20,7 +21,7 @@ cap.set(3, frameWidth)
 cap.set(4, frameHeight)
 cap.set(10, brightness)
 ###Import  model
-model= load_model('TSR.h5')
+model= load_model('TSR_v2.h5')
 
 
 def grayscale(img):
