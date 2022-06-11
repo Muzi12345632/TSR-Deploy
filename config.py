@@ -26,7 +26,7 @@ path= 'Train'
 labelfile= 'labels.csv'
 batch_size_val = 60
 steps_per_epoch_val= 400
-epochs_val= 15
+epochs_val= 30
 imageDimensions= (32,32)
 testRatio = 0.2
 validationRatio= 0.2
@@ -128,6 +128,6 @@ score = model.evaluate(X_test,y_test,verbose=0)
 print("Test Score:",score[0])
 print("Test Accuracy:",score[1])
 
-model.save("TSR.h5")
+model.save("TSR_v22.h5")
 
 
