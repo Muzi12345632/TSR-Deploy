@@ -23,17 +23,16 @@ Calculate accuracy score
 
 Install Dependancies
 ```
-pip install tensorflow
-pip install opencv
-pip install numpy
-pip install matplotlib
-pip install pandas
+pip install -r requirements.txt
 
 ```
 
 # Platform
 
 jupyter notebook.
-
 pycharm
+
+
+
+
 
