@@ -30,6 +30,7 @@ pip install -r requirements.txt
 # Platform
 
 jupyter notebook.
+
 pycharm
 
 
