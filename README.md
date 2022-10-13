@@ -8,6 +8,11 @@ TRAAFFIC SIGN DETECTION USING NEURAL NETWORKS (AI)
 ![License](https://img.shields.io/badge/license-GPLv3-blue.svg)
 
 
+
+
+https://user-images.githubusercontent.com/84638389/195722023-9a7a23f8-e4ed-41eb-8cf4-0e7766ff6c64.mp4
+
+
 # Traffic sign detection using CNN
 
 Real time detection of traffic signs using Neural Networks and computer vision.Able to 
